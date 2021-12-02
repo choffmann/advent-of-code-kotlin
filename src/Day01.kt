@@ -2,9 +2,9 @@ fun main() {
     fun part1(input: List<Int>): Int {
         var count = 0
         input.forEachIndexed { index, element ->
-             if (index > 0 && element > input[index - 1]) {
+            if (index > 0 && element > input[index - 1]) {
                 count++
-             }
+            }
         }
         return count
     }
@@ -14,7 +14,7 @@ fun main() {
         var count = 0
 
         input.forEachIndexed { index, _ ->
-            if(input.size >= index + 3) {
+            if (input.size >= index + 3) {
                 sum.add(input[index] + input[index + 1] + input[index + 2])
             }
         }
