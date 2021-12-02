@@ -29,6 +29,14 @@ fun main() {
         return horizontal * depth
     }
 
+    // test if implementation meets criteria from the description, like:
+    val testInput = readInput("Day02_test").map {
+        val split = it.split(" ")
+        Pair<String, Int>(split[0], split[1].toInt())
+    }
+    check(part1(testInput) == 150)
+    check(part2(testInput) == 900)
+
     val input = readInput("Day02").map {
         val split = it.split(" ")
         Pair<String, Int>(split[0], split[1].toInt())
