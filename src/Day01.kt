@@ -1,21 +1,21 @@
 fun main() {
-    fun part1(input: List<String>): Int {
+    fun part1(input: List<Int>): Int {
         var count = 0
         input.forEachIndexed { index, element ->
-             if (index > 0 && element.toInt() > input[index - 1].toInt()) {
+             if (index > 0 && element > input[index - 1]) {
                 count++
              }
         }
         return count
     }
 
-    fun part2(input: List<String>): Int {
+    fun part2(input: List<Int>): Int {
         val sum = arrayListOf<Int>()
         var count = 0
 
         input.forEachIndexed { index, _ ->
             if(input.size >= index + 3) {
-                sum.add(input[index].toInt() + input[index + 1].toInt() + input[index + 2].toInt())
+                sum.add(input[index] + input[index + 1] + input[index + 2])
             }
         }
 
@@ -27,7 +27,7 @@ fun main() {
         return count
     }
 
-    val input = readInput("Day01")
+    val input = readInput("Day01").map { it.toInt() }
     println(part1(input))
     println(part2(input))
 }
